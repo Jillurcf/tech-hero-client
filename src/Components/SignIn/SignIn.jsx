@@ -1,9 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 
 const SignIn = () => {
+const {signinwithGoogle} = useContext(AuthContext)
+
+  const handleGoogleSignIn = () =>{
+    signinwithGoogle()
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(error=> console.error(error))
+  }
   return (
-    <div className="">
-      <div className="hero">
+    <div className="h-screen items-center flex">
+      <div className="hero items-center">
         <div className=" ">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl text-center mt-12 mb-12 font-bold">
@@ -11,7 +23,7 @@ const SignIn = () => {
             </h1>
           </div>
           <div className="card shadow-2xl bg-pink-100">
-            <form className="card-body lg:w-[50vw]">
+            <form className="card-body lg:w-[40vw]">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -97,7 +109,13 @@ const SignIn = () => {
                   </div>
                 </div> */}
               <div className="form-control mt-6">
-                <p className="text-2xl mb-4">Sign in with <span className=" ml-2 underline text-blue-700 font-bold">Google?</span></p>
+              {/* <p onClick={handleGoogleSignIn} className="text-2xl mb-4">Sign in with <span className=" ml-2 underline text-blue-700 font-bold">Google?</span></p> */}
+                <p onClick={handleGoogleSignIn} className="text-2xl mb-4">
+                 Sign In with 
+                  <Link className=" ml-2 underline text-blue-700 font-semibold" >
+                  GOOGLE
+                  </Link>
+                </p>
                 <p className="text-2xl mb-4">
                   Do not have account? Please
                   <Link className=" ml-2 underline text-blue-700 font-semibold" to="/register">
@@ -107,6 +125,7 @@ const SignIn = () => {
                 <button className="btn btn-secondary">Sign In</button>
               </div>
             </form>
+            
           </div>
         </div>
       </div>
