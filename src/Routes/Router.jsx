@@ -7,6 +7,8 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/Home/Home";
 import AddProcut from "../Components/AddProduct/AddProcut";
 import MyCart from "../Components/MyCart/MyCart";
+import Register from "../Components/Register/Register";
+import SignIn from "../Components/SignIn/SignIn";
 
   const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ import MyCart from "../Components/MyCart/MyCart";
         {
             path: '/mycart',
             element: <MyCart></MyCart>
+        },
+        {
+            path: '/register',
+            element: <Register></Register>
+        },
+        {
+            path: '/signin',
+            element: <SignIn></SignIn>
         }
       ]
     },

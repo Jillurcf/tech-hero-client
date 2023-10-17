@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 
 const NavBar = () => {
   const navLinks = (
@@ -70,7 +71,11 @@ const NavBar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="w-10">
+            <img src="/src/assets/logo.png" alt="" />
+           
+          </a>
+          <h1 className="px-2 text-2xl text-pink-400 font-bold">TechHero</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -79,7 +84,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end md:mx-12">
-          <a className="btn btn-secondary">Log In</a>
+         <Link to='/signin'> <button className="btn btn-secondary">Log In</button></Link>
         </div>
       </div>
     </div>
