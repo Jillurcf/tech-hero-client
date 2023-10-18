@@ -9,10 +9,13 @@ const  Banner = () => {
     const addedUsers = useLoaderData()
     console.log(addedUsers);
     return (
-        <div className=''>
+        <div className='w-screen mx-aut0'>
+            {/* <div className='mx-auto grid grid-cols-6'>
             {
                 addedUsers.map(users => <Slider key={users._id} users={users}></Slider>)
             }
+            </div> */}
+            <Slider addedUsers={addedUsers}></Slider>
         </div>
     )
    

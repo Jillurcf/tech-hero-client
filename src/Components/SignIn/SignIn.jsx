@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Slider from "../Home/Slider";
 
 
 const SignIn = () => {
@@ -129,6 +130,7 @@ const {signinwithGoogle} = useContext(AuthContext)
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

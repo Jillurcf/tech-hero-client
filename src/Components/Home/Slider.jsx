@@ -1,111 +1,66 @@
 
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
-import './Slider.css'
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import "./Slider.css"
+
+// 
+// https://i.ibb.co/hXS025Q/intelvr.jpg
+// https://i.ibb.co/HVBk3dW/googlevvr.jpg
+// 
+// https://i.ibb.co/jz8k3Dq/sonyvr.jpg
+// 
+// https://i.ibb.co/jVDPK0X/samvr.jpg
+// 
+// https://i.ibb.co/cyX245C/applever.jpg
+// 
 
 
-// import "keen-slider/keen-slider.min.css"
-// import "./styles.css"
+const carousel = (slider) => {
+  const z = 300
+  function rotate() {
+    const deg = 360 * slider.track.details.progress
+    slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`
+  }
+  slider.on("created", () => {
+    const deg = 360 / slider.slides.length
+    slider.slides.forEach((element, idx) => {
+      element.style.transform = `rotateY(${deg * idx}deg) translateZ(${z}px)`
+    })
+    rotate()
+  })
+  slider.on("detailsChanged", rotate)
+}
 
-const Slider = ({users}) => {
-    const {image, name, brandname, type, price, shortdescription, rating, addbuttons } = users;
-  const [sliderRef] = useKeenSlider(
+export default function Slider() {
+   const [sliderRef] = useKeenSlider(
     {
       loop: true,
+      selector: ".carousel__cell",
+      renderMode: "custom",
+      mode: "free-snap",
     },
-    [
-      (slider) => {
-        let timeout
-        let mouseOver = false
-        function clearNextTimeout() {
-          clearTimeout(timeout)
-        }
-        function nextTimeout() {
-          clearTimeout(timeout)
-          if (mouseOver) return
-          timeout = setTimeout(() => {
-            slider.next()
-          }, 2000)
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true
-            clearNextTimeout()
-          })
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false
-            nextTimeout()
-          })
-          nextTimeout()
-        })
-        slider.on("dragStarted", clearNextTimeout)
-        slider.on("animationEnded", nextTimeout)
-        slider.on("updated", nextTimeout)
-      },
-    ]
+    [carousel]
   )
 
   return (
-    <div className=''>
-      <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide number-slide1">
-            <img src={image} alt="" /></div>
-        <div className="keen-slider__slide number-slide2">
-            <img src={image} alt="" />
+    <div className="wrapper sliderBody mt-36 mb-60">
+      <div className="scene">
+        <div className="carousel keen-slider" ref={sliderRef}>
+          <div className="carousel__cell number-slide1">
+            <img src="https://i.ibb.co/jTFt0gv/intelhr.jpg" alt="" /></div>
+          <div className="carousel__cell number-slide2">
+            <img src="https://i.ibb.co/RyYsnrf/googlehr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide3">
+            <img src="https://i.ibb.co/2qZn1QR/sonyhr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide4"><img src="https://i.ibb.co/0nxwZT7/samhr.jpg" alt="" /></div>
+          <div className="carousel__cell number-slide5">
+            <img src="https://i.ibb.co/QH4Dy2D/applehr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide6"><img src="https://i.ibb.co/jTFt0gv/intelhr.jpg" alt="" /></div>
         </div>
-        <div className="keen-slider__slide number-slide3">
-            <img src={image} alt="" /></div>
-        <div className="keen-slider__slide number-slide4">
-            <img src={image} alt="" /></div>
-        <div className="keen-slider__slide number-slide5">
-            <img src={image} alt="" /></div>
-        <div className="keen-slider__slide number-slide6">
-            <img src={image} alt="" /></div>
       </div>
     </div>
   )
 }
-
-
-export default Slider;
-
-
-
-// const Slider = ({users}) => {
-//     const {image, name, brandname, type, price, shortdescription, rating, addbuttons } = users;
-//   const [sliderRef, instanceRef] = useKeenSlider(
-//     {
-//       slideChanged() {
-//         console.log('slide changed')
-//       },
-//     },
-//       {
-//         loop: true,
-//       },
-//       [
-//         slider => {
-//           slider.on('created', () => {
-//             alert('Hello World')
-//           })
-//         },
-//       ]
-//   )
-
-
-
-//   return (
-//     <div ref={sliderRef} className="keen-slider">
-//       <div className="keen-slider__slide">
-//         <img src={image} alt="" />
-//       </div>
-//       <div className="keen-slider__slide">
-//         <img src={image} alt="" />
-//       </div>
-//       <div className="keen-slider__slide">
-//         <img src={image} alt="" />
-//       </div>
-//     </div>
-//   )
-// };
-
-// export default Slider;

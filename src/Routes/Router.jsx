@@ -11,6 +11,8 @@ import Register from "../Components/Register/Register";
 import SignIn from "../Components/SignIn/SignIn";
 import Banner from "../Components/Home/Banner";
 import PrivateRoute from "./PrivateRoute";
+import Apple from "../Components/Brand/Apple";
+import BrandDetails from "../Components/Brand/BrandDetails";
 
   const router = createBrowserRouter([
     {
@@ -44,6 +46,11 @@ import PrivateRoute from "./PrivateRoute";
           element: <Banner></Banner>,
           loader: ()=> fetch('https://assignment10-server-6fej5x89j-jillurs-projects.vercel.app/addedproduct')
 
+        },
+        {
+          path: '/brandDetails/:brandname',
+          element: <BrandDetails></BrandDetails>,
+          loader: ({params})=> fetch(`https://assignment10-server-6fej5x89j-jillurs-projects.vercel.app/addedproduct/${params.brandname}`)
         }
       ]
     },

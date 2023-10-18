@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const ProductCard = ({ users }) => {
-    const {image, name, brandname, type, price, shortdescription, rating, addbuttons } = users
+    const {_id, image, name, brandname, type, price, shortdescription, rating, addbuttons } = users
   return (
-    <div>
+    <div className="mt-60">
      
       <div className="card w-full bg-base-100 shadow-xl">
         <figure>
@@ -13,7 +15,7 @@ const ProductCard = ({ users }) => {
         <div className="card-body">
           <div className="flex justify-between">
           <h2 className="card-title">{name}</h2>
-          <button className="btn btn-secondary font-bold">{brandname}</button>
+         <button  className="btn btn-secondary font-bold"><Link to={`/brandDetails/${brandname}`}>{brandname}</Link></button>
           </div>
           <div className="flex justify-between">
           <h2 className="card-title">Price: {price}</h2>
