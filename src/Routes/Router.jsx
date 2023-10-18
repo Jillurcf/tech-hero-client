@@ -9,6 +9,8 @@ import AddProcut from "../Components/AddProduct/AddProcut";
 import MyCart from "../Components/MyCart/MyCart";
 import Register from "../Components/Register/Register";
 import SignIn from "../Components/SignIn/SignIn";
+import Banner from "../Components/Home/Banner";
+import PrivateRoute from "./PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -18,11 +20,12 @@ import SignIn from "../Components/SignIn/SignIn";
       children: [
         {
             path: '/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: ()=> fetch('https://assignment10-server-6fej5x89j-jillurs-projects.vercel.app/addedproduct')
         },
         {
             path: '/addproduct',
-            element: <AddProcut></AddProcut>
+            element: <PrivateRoute><AddProcut></AddProcut></PrivateRoute>
         },
         {
             path: '/mycart',
@@ -35,6 +38,12 @@ import SignIn from "../Components/SignIn/SignIn";
         {
             path: '/signin',
             element: <SignIn></SignIn>
+        },
+        {
+          path: '/banner',
+          element: <Banner></Banner>,
+          loader: ()=> fetch('https://assignment10-server-6fej5x89j-jillurs-projects.vercel.app/addedproduct')
+
         }
       ]
     },

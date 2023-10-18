@@ -1,4 +1,20 @@
+
 import { useRef, useState } from "react";
+
+
+// https://i.ibb.co/jTFt0gv/intelhr.jpg
+// https://i.ibb.co/hXS025Q/intelvr.jpg
+// https://i.ibb.co/HVBk3dW/googlevvr.jpg
+// https://i.ibb.co/RyYsnrf/googlehr.jpg
+// https://i.ibb.co/jz8k3Dq/sonyvr.jpg
+// https://i.ibb.co/2qZn1QR/sonyhr.jpg
+// https://i.ibb.co/jVDPK0X/samvr.jpg
+// https://i.ibb.co/0nxwZT7/samhr.jpg
+// https://i.ibb.co/cyX245C/applever.jpg
+// https://i.ibb.co/QH4Dy2D/applehr.jpg
+
+
+
 
 
 const AddProcut = () => {
@@ -20,6 +36,17 @@ const AddProcut = () => {
     const rating = form.rating.value;
     const addbuttons = addbutton;
     console.log(image, name, brandname, type, price, shortdescription, rating, addbuttons  );
+    const addedProduct = {image, name, brandname, type, price, shortdescription, rating, addbuttons }
+    console.log(addedProduct);
+    fetch('https://assignment10-server-6fej5x89j-jillurs-projects.vercel.app/addedproduct', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(addedProduct)
+    })
+   .then(res => res.json())
+    .then(data => console.log(data))
   }
     return (
         <div>
@@ -128,7 +155,7 @@ const AddProcut = () => {
                 </label>
                 <input
                   type="button"
-                  value="click Me!"
+                  value="See Details!"
                   ref={buttonRef}
                   onClick={handleClick}
                   name="addbutton"
