@@ -42,7 +42,7 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     loggedOut()
-      .then((result) => console.log(result.user))
+      .then((result) => console.log(result))
       .catch((error) => console.log(error));
   };
   return (

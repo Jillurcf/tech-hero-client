@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import BrandDetailCard from "./BrandDetailCard";
+import BdSlider from "./BdSlider";
 
 
 const BrandDetails = () => {
@@ -23,7 +24,8 @@ const BrandDetails = () => {
     
     return (
         <div>
-            <h2 className="text-center font-bold text-4xl">Product Detail</h2>
+            <BdSlider></BdSlider>
+            <h2 className="text-center font-bold text-7xl mt-24 py-8">Product Detail</h2>
             {
                 brandDetails.map(bdetail=> 
                     <div key={bdetail._id} className="card w-full bg-base-100 shadow-xl">
