@@ -1,10 +1,14 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const SignIn = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { signinwithGoogle, signIn } = useContext(AuthContext);
+  const [userPassword, setUserPassword] = useState(null)
+  const [userEmail, setUserEmail] = useState("")
 
   const handleGoogleSignIn = () => {
     signinwithGoogle()
@@ -14,13 +18,40 @@ const SignIn = () => {
       .catch((error) => console.error(error));
   };
 
-  const handleSignin = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-    const signinUser = { email, password };
-    console.log(signinUser);
+  const handleSignin = event => {
+   event.preventDefault()
+   const form = event.target;
+  const email = form.email.value;
+  const password = form.password.value;
+  console.log(email, password);
+   
+
+    if (!userEmail) {
+     new Swal("Email or passwrod does not match");
+    } else if (!userPassword) {
+      new Swal("Email or passwrod does not match");
+    }
+
+    signIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        event.target.reset();
+        let userEmail = result.user.email;
+        setUserEmail(userEmail);
+        let userPassword = result.user.passord;
+        setUserPassword(userPassword);
+        console.log("success", userEmail, userPassword);
+        new Swal("Login Success");
+      })
+      .catch((error) => {
+        console.log(error);
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        console.log("error", errorCode, errorMessage);
+      });
+    navigate(location?.state ? location.state : "/");
+
+
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
@@ -41,7 +72,7 @@ const SignIn = () => {
             </h1>
           </div>
           <div className="card shadow-2xl bg-pink-100">
-            <form onClick={handleSignin} className="card-body lg:w-[40vw]">
+            <form onSubmit={handleSignin} className="card-body lg:w-[40vw]">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

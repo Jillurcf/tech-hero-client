@@ -3,9 +3,9 @@ const AboutUs = () => {
     return (
     <div className="">
       <div>
-      <h2 className="mt-8 text-center text-6xl font-bold">Who We are</h2>
+      <h2 className="mt-8 px-12 text-center text-6xl font-bold">Who We are</h2>
       </div>
-        <div className="flex max-w-screen-2xl mx-auto h-auto items-center">
+        <div className="flex px-12 max-w-screen-2xl mx-auto h-auto items-center">
         <div className="mx-auto items-center">
         
           <div className="mt-12 relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">

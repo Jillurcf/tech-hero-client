@@ -6,7 +6,7 @@ const ProductCard = ({ users }) => {
    
            
   return (
-    <div className="mt-60">
+    <div className="">
      
       <div className="card w-full bg-base-100 shadow-xl">
         <figure>
