@@ -13,6 +13,10 @@ import Banner from "../Components/Home/Banner";
 import PrivateRoute from "./PrivateRoute";
 
 import BrandDetails from "../Components/Brand/BrandDetails";
+import ProductCard from "../Components/Home/productCard";
+import AboutUs from "../Components/Home/AboutUs";
+import GivFeedBack from "../Components/Home/GiveFeedBack";
+// import BrandDetailCard from "../Components/Brand/BrandDetailCard";
 
   const router = createBrowserRouter([
     {
@@ -29,10 +33,15 @@ import BrandDetails from "../Components/Brand/BrandDetails";
             path: '/addproduct',
             element: <PrivateRoute><AddProcut></AddProcut></PrivateRoute>
         },
+        
         {
             path: '/mycart',
             element: <MyCart></MyCart>
         },
+        // {
+        //   path: '/ourproducts',
+        //   element: <ProductCard></ProductCard>
+        // },
         {
             path: '/register',
             element: <Register></Register>
@@ -49,8 +58,16 @@ import BrandDetails from "../Components/Brand/BrandDetails";
         },
         {
           path: '/brandDetails/:id',
-          element: <BrandDetails></BrandDetails>,
+          element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
           loader: ()=> fetch(`http://localhost:5000/addedproduct`)
+        },
+        {
+          path: '/aboutus',
+          element: <AboutUs></AboutUs>
+        },
+        {
+          path: '/contactus',
+          element: <GivFeedBack></GivFeedBack>
         }
       ]
     },

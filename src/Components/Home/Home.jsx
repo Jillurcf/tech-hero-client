@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import ProductCard from "./productCard";
 import Banner from "./Banner";
-import PlaceOrderForm from "./PlaceOrderForm";
+// import PlaceOrderForm from "./PlaceOrderForm";
 import AboutUs from "./AboutUs";
+import GivFeedBack from "./GiveFeedBack";
 
 
 
@@ -30,7 +31,8 @@ const Home = () => {
            
             </div>
             <AboutUs></AboutUs>
-            <PlaceOrderForm></PlaceOrderForm>
+            <GivFeedBack></GivFeedBack>
+           
         </div>
     );
 };
