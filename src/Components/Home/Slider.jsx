@@ -43,7 +43,8 @@ export default function Slider() {
   )
 
   return (
-    <div className="wrapper sliderBody mt-36 mb-60">
+    <div className="">
+      <div className="wrapper sliderBody mt-36 mb-60">
       <div className="scene">
         <div className="carousel keen-slider" ref={sliderRef}>
           <div className="carousel__cell number-slide1">
@@ -61,6 +62,45 @@ export default function Slider() {
           <div className="carousel__cell number-slide6"><img src="https://i.ibb.co/jTFt0gv/intelhr.jpg" alt="" /></div>
         </div>
       </div>
+    </div>
+      {/* <div className="wrapper sliderBody mt-36 mb-60">
+      <div className="scene">
+        <div className="carousel keen-slider" ref={sliderRef}>
+          <div className="carousel__cell number-slide1">
+            <img src="https://i.ibb.co/jTFt0gv/intelhr.jpg" alt="" /></div>
+          <div className="carousel__cell number-slide2">
+            <img src="https://i.ibb.co/RyYsnrf/googlehr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide3">
+            <img src="https://i.ibb.co/2qZn1QR/sonyhr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide4"><img src="https://i.ibb.co/0nxwZT7/samhr.jpg" alt="" /></div>
+          <div className="carousel__cell number-slide5">
+            <img src="https://i.ibb.co/QH4Dy2D/applehr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide6"><img src="https://i.ibb.co/jTFt0gv/intelhr.jpg" alt="" /></div>
+        </div>
+      </div>
+    </div> */}
+      {/* <div className="wrapper sliderBody mt-36 mb-60">
+      <div className="scene">
+        <div className="carousel keen-slider" ref={sliderRef}>
+          <div className="carousel__cell number-slide1">
+            <img src="https://i.ibb.co/jTFt0gv/intelhr.jpg" alt="" /></div>
+          <div className="carousel__cell number-slide2">
+            <img src="https://i.ibb.co/RyYsnrf/googlehr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide3">
+            <img src="https://i.ibb.co/2qZn1QR/sonyhr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide4"><img src="https://i.ibb.co/0nxwZT7/samhr.jpg" alt="" /></div>
+          <div className="carousel__cell number-slide5">
+            <img src="https://i.ibb.co/QH4Dy2D/applehr.jpg" alt="" />
+          </div>
+          <div className="carousel__cell number-slide6"><img src="https://i.ibb.co/jTFt0gv/intelhr.jpg" alt="" /></div>
+        </div>
+      </div>
+    </div> */}
     </div>
   )
 }

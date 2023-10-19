@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Slider from "../Home/Slider";
+
 
 
 const SignIn = () => {
@@ -55,60 +55,7 @@ const {signinwithGoogle} = useContext(AuthContext)
                 </label>
               </div>
 
-              {/* <div className="w-36 flex">
-                  <h2 className="mt-2">Gender</h2>
-                  <div className="form-control">
-                    <label className="label cursor-pointer">
-                      <input
-                        type="radio"
-                        name="radiomf"
-                        value="male"
-                        className="radio ml-4"
-                        checked
-                      />
-                      <span className="ml-2 mr-4 label-text">Male</span>
-                    </label>
-                  </div>
-                  <div className="form-control">
-                    <label className="label cursor-pointer">
-                      <input
-                        type="radio"
-                        name="radiomf"
-                        value="female"
-                        className="radio checked:bg-blue-500"
-                        checked
-                      />
-                      <span className="ml-2 label-text">Female</span>
-                    </label>
-                  </div>
-                </div>
-                <div className="w-36 flex">
-                  <h2 className="mt-2">Status</h2>
-                  <div className="form-control">
-                    <label className="label cursor-pointer">
-                      <input
-                        type="radio"
-                        name="radioai"
-                        value="active"
-                        className="radio ml-4"
-                        checked
-                      />
-                      <span className="ml-2 mr-4 label-text">Active</span>
-                    </label>
-                  </div>
-                  <div className="form-control">
-                    <label className="label cursor-pointer">
-                      <input
-                        type="radio"
-                        name="radioai"
-                        value="Inactive"
-                        className="radio checked:bg-blue-500"
-                        checked
-                      />
-                      <span className="ml-2 label-text">Inactive</span>
-                    </label>
-                  </div>
-                </div> */}
+             
               <div className="form-control mt-6">
               {/* <p onClick={handleGoogleSignIn} className="text-2xl mb-4">Sign in with <span className=" ml-2 underline text-blue-700 font-bold">Google?</span></p> */}
                 <p onClick={handleGoogleSignIn} className="text-2xl mb-4">
