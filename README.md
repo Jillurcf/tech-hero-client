@@ -1,8 +1,11 @@
-# React + Vite
+## About the Project TechHero
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This website is created for showing the information of Technology and Electronics.
+- This Website having navbar top of the page here we will find company logo namely TECHHERO. At the Right end of the navbar user will find a login button to loggedin.
+- The Speciality of the web site is that one can add product after his successfull login if the user do not have any account they can easily register with the register page which Authenticate with the firebase policy. 
+- We use monogodb for preserving data for future by post method and we can read data from their by GET method as well as update and delete also. 
+- Obviously the site is divieded into two part server site and client site we deployed server site with vercel cli and deploy our client side with the firebase is as live link is mentioned below please do not forget to see.
 
-Currently, two official plugins are available:
+# The live link for the site is: https://assignment10-f0649.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Thank you.
