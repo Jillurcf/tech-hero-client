@@ -7,12 +7,15 @@ import GivFeedBack from "./GiveFeedBack";
 
 
 
+
 const Home = () => {
     const addedUsers = useLoaderData()
     console.log(addedUsers);
+    
     return (
         
-        <div>
+        <div className=" bg-white dark:bg-black">
+            
              <Banner></Banner>
             <div className="bg-pink-100 md:pb-36">
             <h1 className="text-center pt-12 pb-12 md:text-6xl font-bold md:py-36 md:pt-48"> <span className="bg-pink-400 lg:py-8  lg:px-24 p-2 rounded-2xl text-white">Our Products</span></h1>

@@ -32,6 +32,7 @@ const {id} = useParams()
        .then(res => res.json())
         .then(data => console.log(data))
         new Swal('Product Updated')
+        e.target.reset();
       }
 
 

@@ -12,8 +12,8 @@ const BrandDetailCard = ({ bdetails }) => {
   } = bdetails;
 
   return (
-    <div>
-      <div className="card w-full bg-base-100 shadow-xl">
+    <div className=" bg-white dark:bg-black">
+      <div className="card w-full bg-base-100 shadow-xl ">
         <figure>
           <img src={image} alt="image" />
         </figure>

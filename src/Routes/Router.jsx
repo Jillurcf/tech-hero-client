@@ -10,7 +10,7 @@ import Banner from "../Components/Home/Banner";
 import PrivateRoute from "./PrivateRoute";
 
 import BrandDetails from "../Components/Brand/BrandDetails";
-import ProductCard from "../Components/Home/productCard";
+
 import AboutUs from "../Components/Home/AboutUs";
 import GivFeedBack from "../Components/Home/GiveFeedBack";
 
