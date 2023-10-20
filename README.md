@@ -7,5 +7,6 @@
 - Obviously the site is divieded into two part server site and client site we deployed server site with vercel cli and deploy our client side with the firebase is as live link is mentioned below please do not forget to see.
 
  live link : https://assignment10-f0649.web.app
+ <!-- https://assignment10-f0649.web.app -->
 
 # Thank you.

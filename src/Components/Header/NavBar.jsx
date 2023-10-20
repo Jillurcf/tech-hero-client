@@ -95,7 +95,7 @@ const NavBar = () => {
             </ul>
           </div>
           <a className="w-10">
-            <img src="/src/assets/logo.png" alt="" />
+            <img src="https://i.ibb.co/QJXCSYv/logo.png" alt="" />
           </a>
           <h1 className="px-2 text-2xl text-pink-400 font-bold">TechHero</h1>
         </div>

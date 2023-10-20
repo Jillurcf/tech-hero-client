@@ -4,7 +4,7 @@ const Footer = () => {
       <footer className="footer footer-center pt-36 p-10 bg-pink-200 text-white-content">
    
         <aside>
-        <img className="w-1/4" src="/src/assets/logo.png" alt="" />
+        <img className="w-1/4" src="https://i.ibb.co/QJXCSYv/logo.png" alt="" />
           {/* <svg
             width="50"
             height="50"

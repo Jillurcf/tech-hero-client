@@ -19,7 +19,7 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addcart/delete/${id}`, {
+        fetch(`https://assignment10-server-2dhpqnf17-jillurs-projects.vercel.app/addcart/delete/${id}`, {
             method: 'DELETE',
            
         })
@@ -37,9 +37,9 @@ const MyCart = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-center text-7xl font-bold text-bule-600">My cart</h2>
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 m-24">
+    <div className="px-6 lg:px24">
+      <h2 className="py-12 text-center text-7xl font-bold text-bule-600">My cart</h2>
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:m-24 my-12 gap-">
     {
         cartdata.map(cp=>
           <div key={cp._id} >

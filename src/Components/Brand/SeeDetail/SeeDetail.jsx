@@ -14,7 +14,7 @@ const SeeDetail = () => {
     
 
     const handleAddCart = () =>{
-        fetch('https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addcart', {
+        fetch('https://assignment10-server-2dhpqnf17-jillurs-projects.vercel.app/addcart', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -31,8 +31,8 @@ const SeeDetail = () => {
 
 
     return (
-        <div>
-            <h1 className="text-center text-6xl font bold">See Detail</h1>
+        <div className="lg:px-24 px-4">
+            <h1 className="text-center text-7xl font-bold p-12">See Detail</h1>
           
             <div className="card w-full bg-base-100 shadow-xl">
         <figure>
