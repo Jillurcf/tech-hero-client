@@ -50,7 +50,7 @@ const BrandDetails = () => {
                     {/* </Link> */}
                    </div>
                    <div className="card-actions justify-start">
-                     <button className="btn btn-secondary">Update</button>
+                     <button className="btn btn-secondary"><Link to={`/updateform/${bdetail._id}`}>Update</Link></button>
                    </div>
                  </div>
                </div>

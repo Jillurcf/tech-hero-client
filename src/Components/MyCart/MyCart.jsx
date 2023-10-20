@@ -4,7 +4,10 @@ import Swal from "sweetalert2";
 
 const MyCart = () => {
   const cartProducts = useLoaderData();
+
+  console.log(cartProducts);
   const [cartdata, setCartdata] = useState(cartProducts)
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -16,7 +19,7 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addcart/${id}`, {
+        fetch(`http://localhost:5000/addcart/delete/${id}`, {
             method: 'DELETE',
            
         })
@@ -36,9 +39,12 @@ const MyCart = () => {
   return (
     <div>
       <h2 className="text-center text-7xl font-bold text-bule-600">My cart</h2>
-      <div className="grid lg:grid-cols-4 grid-cols-1 gap-8">
-        {cartdata.map((cp) => (
-          <div key={cp._id} className="card w-full bg-base-100 shadow-xl">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 m-24">
+    {
+        cartdata.map(cp=>
+          <div key={cp._id} >
+       
+          <div  className="card w-full bg-pink-100 shadow-xl">
             <figure>
               <img src={cp.image} alt="image" />
             </figure>
@@ -46,27 +52,42 @@ const MyCart = () => {
               <div className="flex justify-between">
                 <h2 className="card-title">{cp.name}</h2>
                 <button className="btn btn-secondary font-bold">
-                  {cp.brandname}
+                 Add 
                 </button>
               </div>
               <div className="flex justify-between">
-                <h2 className="card-title">Price: {cp.price}</h2>
+                <h2 className="card-title">{cp.price}</h2>
                 <h2>{cp.type}</h2>
               </div>
               <p>{cp.shortdescription}</p>
 
-              <div className="card-actions justify-center">
+              <div className="flex justify-between">
+              <div className="card-actions justify-end">
                 <button
-                  onClick={() => handleDelete(cp._id)}
+                onClick={()=>handleDelete(cp._id)}
+                
                   className="btn btn-primary"
                 >
                   Delete
                 </button>
               </div>
+              <div className="card-actions justify-start">
+                <button
+                
+                  className="btn btn-accent"
+                >
+                 Rating: {cp.rating}
+                </button>
+              </div>
+              </div>
             </div>
           </div>
-        ))}
+      
       </div>
+          )
+      }
+    </div>
+     
     </div>
   );
 };

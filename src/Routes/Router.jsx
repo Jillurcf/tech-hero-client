@@ -13,8 +13,9 @@ import BrandDetails from "../Components/Brand/BrandDetails";
 import ProductCard from "../Components/Home/productCard";
 import AboutUs from "../Components/Home/AboutUs";
 import GivFeedBack from "../Components/Home/GiveFeedBack";
-import DetailInformation from "../Components/Brand/DetailInformation";
+
 import SeeDetail from "../Components/Brand/SeeDetail/SeeDetail";
+import UpdateForm from "../Components/Brand/UpdateForm";
 // import BrandDetailCard from "../Components/Brand/BrandDetailCard";
 
 const router = createBrowserRouter([
@@ -36,11 +37,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: '/updateform/:id',
+        element: <UpdateForm></UpdateForm>,
+        loader: () => fetch("http://localhost:5000/addedproduct")
+      },
 
       {
         path: "/mycart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch("/http://localhost:5000/addcart")
+        loader: () => fetch('http://localhost:5000/addcart')
       },
       // {
       //   path: '/ourproducts',
@@ -71,7 +77,7 @@ const router = createBrowserRouter([
       {
         path: "/seedetail/:id",
         element: <PrivateRoute><SeeDetail></SeeDetail></PrivateRoute>,
-        loader: ( {params} )=> fetch(`http://localhost:5000/addedproduct/${params.id}`)
+        loader: ( {params} )=> fetch(`http://localhost:5000/addedproduct/products/${params.id}`)
       },
 
       {

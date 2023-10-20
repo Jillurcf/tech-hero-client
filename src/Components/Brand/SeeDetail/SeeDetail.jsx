@@ -1,4 +1,4 @@
-import { data } from "autoprefixer";
+
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -8,7 +8,9 @@ import Swal from "sweetalert2";
 
 const SeeDetail = () => {
   const seedetails = useLoaderData()
-  console.log(seedetails);
+  const {image, name, brandname, type, price, shortdescription, rating} = seedetails;
+  const dataToCart = {image, name, brandname, type, price, shortdescription, rating}
+  console.log(dataToCart);
     
 
     const handleAddCart = () =>{
@@ -17,7 +19,7 @@ const SeeDetail = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(seedetails)
+            body: JSON.stringify(dataToCart)
         })
         .then(res =>res.json())
         .then(data=> {
