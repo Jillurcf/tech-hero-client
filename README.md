@@ -6,6 +6,6 @@
 - We use monogodb for preserving data for future by post method and we can read data from their by GET method as well as update and delete also. 
 - Obviously the site is divieded into two part server site and client site we deployed server site with vercel cli and deploy our client side with the firebase is as live link is mentioned below please do not forget to see.
 
- live link : https://assignment10-f0649.web.app/
+ live link : https://assignment10-f0649.web.app
 
 # Thank you.

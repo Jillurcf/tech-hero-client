@@ -22,7 +22,7 @@ const {id} = useParams()
         console.log(image, name, brandname, type, price, shortdescription, rating,  );
         const updateProduct = {image, name, brandname, type, price, shortdescription, rating}
         console.log(updateProduct);
-        fetch(`http://localhost:5000/addedproduct/${id}`, {
+        fetch(`https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addedproduct/${id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

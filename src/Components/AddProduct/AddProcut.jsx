@@ -39,7 +39,7 @@ const AddProcut = () => {
     console.log(image, name, brandname, type, price, shortdescription, rating, addbuttons  );
     const addedProduct = {image, name, brandname, type, price, shortdescription, rating, addbuttons }
     console.log(addedProduct);
-    fetch('http://localhost:5000/addedproduct', {
+    fetch('https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addedproduct', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -18,8 +18,7 @@ const BdSlider = ({brandDetails}) => {
   // const {brandDetails.name} = brandDetails
     return (
       <div>
-        {
-          brandDetails ? 
+       
           <div className="flex">
           <div className="carousel lg:h-[80vh] lg:w-3/4 mx-auto">
 <div id="slide1" className="carousel-item relative w-full">
@@ -55,9 +54,7 @@ const BdSlider = ({brandDetails}) => {
 </div>
 </div>
       </div>
-      :
-      <NoProduct></NoProduct>
-        }
+    
     
       </div>
     );

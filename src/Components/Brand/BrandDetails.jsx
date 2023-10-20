@@ -2,8 +2,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 // import BrandDetailCard from "./BrandDetailCard";
 import BdSlider from "./BdSlider";
-import Swal from "sweetalert2";
-// import NoProduct from "./NoProduct";
+
 
 const BrandDetails = () => {
  
@@ -18,8 +17,7 @@ const BrandDetails = () => {
       <h2 className="text-center font-bold text-7xl mt-24 py-8">
         Features Product 
       </h2>
-      {
-        brandProducts? 
+      
       
         <div className="grid lg:grid-cols-4 grid-cols-1 gap-8 m-12">
         {brandProducts.map((bdetail) => (
@@ -57,14 +55,7 @@ const BrandDetails = () => {
              </div>
            ))}
         </div>
-        :
-      
-        new Swal("No product available")
-      //  <NoProduct></NoProduct>
-        
-      
-      
-      }
+       
   
     </div>
   );

@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/addedproduct"),
+        loader: () => fetch("https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addedproduct"),
       },
       {
         path: "/addproduct",
@@ -40,18 +40,15 @@ const router = createBrowserRouter([
       {
         path: '/updateform/:id',
         element: <UpdateForm></UpdateForm>,
-        loader: () => fetch("http://localhost:5000/addedproduct")
+        loader: () => fetch("https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addedproduct")
       },
 
       {
         path: "/mycart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/addcart')
+        loader: () => fetch('https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addcart')
       },
-      // {
-      //   path: '/ourproducts',
-      //   element: <ProductCard></ProductCard>
-      // },
+     
       {
         path: "/register",
         element: <Register></Register>,
@@ -72,12 +69,12 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addedproduct/${params.brandname}`)
+          fetch(`https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addedproduct/${params.brandname}`)
       },
       {
         path: "/seedetail/:id",
         element: <PrivateRoute><SeeDetail></SeeDetail></PrivateRoute>,
-        loader: ( {params} )=> fetch(`http://localhost:5000/addedproduct/products/${params.id}`)
+        loader: ( {params} )=> fetch(`https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addedproduct/products/${params.id}`)
       },
 
       {

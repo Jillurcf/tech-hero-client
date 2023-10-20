@@ -14,7 +14,7 @@ const SeeDetail = () => {
     
 
     const handleAddCart = () =>{
-        fetch('http://localhost:5000/addcart', {
+        fetch('https://assignment10-server-g4dwh3lxm-jillurs-projects.vercel.app/addcart', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
