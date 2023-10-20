@@ -27,7 +27,9 @@ const BrandDetailCard = ({ bdetails }) => {
             <h2>{type}</h2>
           </div>
           <p>{shortdescription}</p>
+          
           <div className="card-actions justify-end">
+           
             <button className="btn btn-primary">{addbuttons}</button>
           </div>
         </div>

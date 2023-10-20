@@ -1,5 +1,6 @@
 
 import { useRef, useState } from "react";
+import Swal from "sweetalert2";
 
 
 // https://i.ibb.co/jTFt0gv/intelhr.jpg
@@ -47,7 +48,7 @@ const AddProcut = () => {
     })
    .then(res => res.json())
     .then(data => console.log(data))
-    alert('added')
+    new Swal('Product added')
   }
     return (
         <div>

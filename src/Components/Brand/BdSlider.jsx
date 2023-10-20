@@ -11,7 +11,9 @@
 // https://i.ibb.co/QH4Dy2D/applehr.jpg
 
 
-const BdSlider = () => {
+const BdSlider = ({brandDetails}) => {
+ console.log(brandDetails);
+  // const {brandDetails.name} = brandDetails
     return (
         <div className="flex">
             <div className="carousel lg:h-[80vh] lg:w-3/4 mx-auto">

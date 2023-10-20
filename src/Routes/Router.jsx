@@ -16,6 +16,8 @@ import BrandDetails from "../Components/Brand/BrandDetails";
 import ProductCard from "../Components/Home/productCard";
 import AboutUs from "../Components/Home/AboutUs";
 import GivFeedBack from "../Components/Home/GiveFeedBack";
+import DetailInformation from "../Components/Brand/DetailInformation";
+import SeeDetail from "../Components/Brand/SeeDetail/SeeDetail";
 // import BrandDetailCard from "../Components/Brand/BrandDetailCard";
 
   const router = createBrowserRouter([
@@ -57,9 +59,21 @@ import GivFeedBack from "../Components/Home/GiveFeedBack";
 
         },
         {
-          path: '/brandDetails/:id',
+          path: '/brandDetails/:brandname',
           element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
-          loader: ()=> fetch(`http://localhost:5000/addedproduct`)
+          // loader: ()=> fetch('http://localhost:5000/addedproduct'),
+          loader: ({params})=> fetch(`http://localhost:5000/addedproduct/${params.brandname}`)
+         
+        },
+        {
+          path: '/sesdetail/:id',
+          element: <SeeDetail></SeeDetail>,
+          loader: ({params}) => fetch(`http://localhost:5000/addedproduct/${params.id}`)
+
+        },
+        {
+          path: '/detailinformation',
+          element: <DetailInformation></DetailInformation>
         },
         {
           path: '/aboutus',
