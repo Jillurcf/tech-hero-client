@@ -68,8 +68,8 @@ const NavBar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="">
-      <div className="navbar lg:h-48 bg-pink-100">
+    <div className=" w-full fixed z-40">
+      <div className="navbar lg:h-24 opacity-80 bg-pink-100">
         <div className="navbar-start md:px-24">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

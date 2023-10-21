@@ -3,7 +3,7 @@ const AboutUs = () => {
     return (
     <div className="">
       <div>
-      <h2 className="mt-8 px-12 text-center text-6xl font-bold">Who We are</h2>
+      <h2 className="px-12 pt-36 text-center text-6xl font-bold">Who We are</h2>
       </div>
         <div className="flex px-12 max-w-screen-2xl mx-auto h-auto items-center">
         <div className="mx-auto items-center">

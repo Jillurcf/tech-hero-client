@@ -11,13 +11,7 @@ const SignIn = () => {
   const [userPassword, setUserPassword] = useState(null)
   const [userEmail, setUserEmail] = useState("")
 
-  const handleGoogleSignIn = () => {
-    signinwithGoogle()
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => console.error(error));
-  };
+ 
 
   const handleSignin = event => {
    event.preventDefault()
@@ -51,16 +45,23 @@ const SignIn = () => {
         console.log("error", errorCode, errorMessage);
       });
     navigate(location?.state ? location.state : "/");
+    // signIn(email, password)
+    //   .then((result) => {
+    //     console.log(result.user);
+        
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  };
 
-
-    signIn(email, password)
+  const handleGoogleSignIn = () => {
+    signinwithGoogle()
       .then((result) => {
         console.log(result.user);
-        
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.error(error));
+      navigate(location?.state ? location.state : "/");
   };
 
   return (

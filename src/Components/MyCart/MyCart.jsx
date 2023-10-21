@@ -37,8 +37,8 @@ const MyCart = () => {
   };
 
   return (
-    <div className="px-6 lg:px24  bg-white dark:bg-black">
-      <h2 className="py-12 text-center text-7xl font-bold text-bule-600">My cart</h2>
+    <div className="px-6 lg:px-24  bg-white dark:bg-black">
+      <h2 className="pt-24 text-center text-7xl font-bold text-bule-600">My cart</h2>
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:m-24 my-12 gap-">
     {
         cartdata.map(cp=>

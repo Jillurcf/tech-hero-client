@@ -1,13 +1,14 @@
 const GivFeedBack = () => {
     return (
       <div className="bg-slate-300">
+         <h1 className="lg:text-5xl lg:pt-48 pt-24 text-2xl text-white text-center font-bold">
+                  Please Give your FeedBack
+                </h1>
         <div className="h-screen items-center flex">
           <div className="hero items-center">
             <div className=" ">
               <div className="text-center lg:text-left">
-                <h1 className="lg:text-5xl text-2xl text-white text-center lg:mt-0 lg:-mb-0  mt-36  -mb-12 font-bold">
-                  Please Give your FeedBack
-                </h1>
+               
               </div>
               <div className="card shadow-2xl bg-pink-300">
                 <form className="card-body lg:w-[40vw]">

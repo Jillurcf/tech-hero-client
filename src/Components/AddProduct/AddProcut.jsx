@@ -1,7 +1,5 @@
-
 import { useRef, useState } from "react";
 import Swal from "sweetalert2";
-
 
 // https://i.ibb.co/jTFt0gv/intelhr.jpg
 // https://i.ibb.co/hXS025Q/intelvr.jpg
@@ -14,19 +12,15 @@ import Swal from "sweetalert2";
 // https://i.ibb.co/cyX245C/applever.jpg
 // https://i.ibb.co/QH4Dy2D/applehr.jpg
 
-
-
-
-
 const AddProcut = () => {
-  const buttonRef = useRef()
-  const [addbutton, setAddbutton] = useState(null)
-  const handleClick = ()=>{
+  const buttonRef = useRef();
+  const [addbutton, setAddbutton] = useState(null);
+  const handleClick = () => {
     setAddbutton(buttonRef.current.value);
-  }
+  };
 
-  const handleAddProduct = e =>{
-    e.preventDefault()
+  const handleAddProduct = (e) => {
+    e.preventDefault();
     const form = e.target;
     const image = form.image.value;
     const name = form.name.value;
@@ -36,27 +30,48 @@ const AddProcut = () => {
     const shortdescription = form.shortdescription.value;
     const rating = form.rating.value;
     const addbuttons = addbutton;
-    console.log(image, name, brandname, type, price, shortdescription, rating, addbuttons  );
-    const addedProduct = {image, name, brandname, type, price, shortdescription, rating, addbuttons }
+    console.log(
+      image,
+      name,
+      brandname,
+      type,
+      price,
+      shortdescription,
+      rating,
+      addbuttons
+    );
+    const addedProduct = {
+      image,
+      name,
+      brandname,
+      type,
+      price,
+      shortdescription,
+      rating,
+      addbuttons,
+    };
     console.log(addedProduct);
-    fetch('https://assignment10-server-2dhpqnf17-jillurs-projects.vercel.app/addedproduct', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(addedProduct)
-    })
-   .then(res => res.json())
-    .then(data => console.log(data))
-    new Swal('Product added')
-  }
-    return (
-        <div>
-              <div className="hero">
+    fetch(
+      "https://assignment10-server-2dhpqnf17-jillurs-projects.vercel.app/addedproduct",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addedProduct),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+    new Swal("Product added");
+  };
+  return (
+    <div className="">
+      <div className="hero">
         <div className=" ">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl text-center mt-12 mb-12 font-bold">
-              Please Register
+            <h1 className="text-5xl text-center mt-60 mb-12 font-bold">
+              Add Product
             </h1>
           </div>
           <div className="card shadow-2xl bg-pink-100">
@@ -84,7 +99,6 @@ const AddProcut = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
               <div className="form-control">
                 <label className="label">
@@ -97,7 +111,6 @@ const AddProcut = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
               <div className="form-control">
                 <label className="label">
@@ -110,7 +123,6 @@ const AddProcut = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
               <div className="form-control">
                 <label className="label">
@@ -123,7 +135,6 @@ const AddProcut = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
               <div className="form-control">
                 <label className="label">
@@ -136,7 +147,6 @@ const AddProcut = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
               <div className="form-control">
                 <label className="label">
@@ -149,7 +159,6 @@ const AddProcut = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
               <div className="form-control">
                 <label className="label">
@@ -165,19 +174,17 @@ const AddProcut = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
 
               <div className="form-control mt-6">
-               
                 <button className="btn btn-secondary">Add Product</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default AddProcut;

@@ -16,11 +16,10 @@ const {id} = useParams()
         const brandname = form.brandname.value;
         const type = form.type.value;
         const price = form.price.value;
-        const shortdescription = form.shortdescription.value;
         const rating = form.rating.value;
         // const addbuttons = addbutton;
-        console.log(image, name, brandname, type, price, shortdescription, rating,  );
-        const updateProduct = {image, name, brandname, type, price, shortdescription, rating}
+        console.log(image, name, brandname, type, price, rating,  );
+        const updateProduct = {image, name, brandname, type, price, rating}
         console.log(updateProduct);
         fetch(`https://assignment10-server-2dhpqnf17-jillurs-projects.vercel.app/addedproduct/${id}`, {
           method: 'PUT',
@@ -111,19 +110,7 @@ const {id} = useParams()
                 />
                
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Short Description</span>
-                </label>
-                <input
-                  type="text"
-                  name="shortdescription"
-                  placeholder="Short description"
-                  className="input input-bordered"
-                  required
-                />
-               
-              </div>
+            
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Rating</span>
@@ -136,14 +123,7 @@ const {id} = useParams()
                   required
                 />
                
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Add Button</span>
-                </label>
-              
-               
-              </div>
+              </div>    
 
               <div className="form-control mt-6">
                
